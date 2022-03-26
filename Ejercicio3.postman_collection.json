@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "18a8ed65-841f-44b1-9cc1-f11027d7b637",
+		"name": "Ejercicio3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CrearListaReproduccion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Gimnasio14\",\r\n    \"descripcion\": \"Para gimnasio\",\r\n    \"canciones\": [\r\n        {\r\n            \"id\": 2,\r\n            \"titulo\": \"Relajacion.mp3\",\r\n            \"artista\": \"Joao\",\r\n            \"album\": \"La relajacion\",\r\n            \"anno\": 2022\r\n        }\r\n    ],\r\n    \"idUsuario\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/ejercicio-quipux/servicio/listaReproduccion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"ejercicio-quipux",
+						"servicio",
+						"listaReproduccion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EliminarListaReproduccion",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/ejercicio-quipux/servicio/listaReproduccion/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"ejercicio-quipux",
+						"servicio",
+						"listaReproduccion",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerListaReproduccion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/ejercicio-quipux/servicio/listaReproduccion/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"ejercicio-quipux",
+						"servicio",
+						"listaReproduccion",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerListasPorUsuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/ejercicio-quipux/servicio/listaReproduccion/usuario/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"ejercicio-quipux",
+						"servicio",
+						"listaReproduccion",
+						"usuario",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
