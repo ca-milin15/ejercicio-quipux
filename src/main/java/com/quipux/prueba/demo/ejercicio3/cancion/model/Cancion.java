@@ -1,11 +1,15 @@
-package com.quipux.prueba.demo.ejercicio3.listareproducccion.model;
+package com.quipux.prueba.demo.ejercicio3.cancion.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
+import com.quipux.prueba.demo.ejercicio3.listareproducccion.model.EntidadGeneral;
+import com.quipux.prueba.demo.ejercicio3.listareproducccion.model.ListaReproduccionXCanciones;
 import com.quipux.prueba.demo.ejercicio3.listareproducccion.utils.beans.CancionResponse;
 
 import lombok.AccessLevel;
@@ -17,6 +21,7 @@ import lombok.experimental.FieldDefaults;
 @Entity
 @Getter
 @Setter
+@Table(name = "cancion")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 public class Cancion extends EntidadGeneral{
@@ -36,9 +41,8 @@ public class Cancion extends EntidadGeneral{
 	@Column(name = "anno")
 	int anno;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "lista_reproduccion_id")
-	ListaReproduccion listaReproduccion;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "cancion")
+	List<ListaReproduccionXCanciones> listaReproduccionXCanciones;
 	
 
 	public Cancion(CancionResponse cancionRequest) {

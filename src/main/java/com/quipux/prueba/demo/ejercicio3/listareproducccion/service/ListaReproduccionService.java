@@ -10,7 +10,7 @@ public interface ListaReproduccionService {
 
 	ListaReproduccionResponse crearListaReproduccion(ListaReproduccionRequest listaReproduccionRequest);
 
-	List<ListaReproduccionResponse> obtenerListaReproduccionPorId(BigInteger idListaReproduccion);
+	ListaReproduccionResponse obtenerListaReproduccionPorId(BigInteger idListaReproduccion);
 	List<ListaReproduccionResponse> obtenerListaReproduccionPorUsuario(BigInteger idUsuario);
 
 	boolean eliminarListaReproduccion(BigInteger idListaReproduccion);

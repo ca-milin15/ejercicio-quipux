@@ -34,7 +34,7 @@ public class ListaReproduccionController {
 
 	@GetMapping("/{idListaReproduccion}")
 	@ResponseStatus(value = HttpStatus.OK)
-	public List<ListaReproduccionResponse> obtenerListaReproduccionPorId(@PathVariable(name = "idListaReproduccion") BigInteger idListaReproduccion){
+	public ListaReproduccionResponse obtenerListaReproduccionPorId(@PathVariable(name = "idListaReproduccion") BigInteger idListaReproduccion){
 		return listaReproduccionService.obtenerListaReproduccionPorId(idListaReproduccion);
 	}
 
@@ -46,7 +46,7 @@ public class ListaReproduccionController {
 
 	@DeleteMapping("/{idListaReproduccion}")
 	@ResponseStatus(value = HttpStatus.OK)
-	public boolean eliminarListaReproduccion(@PathVariable(name = "idUsuario") BigInteger idUsuario){
+	public boolean eliminarListaReproduccion(@PathVariable(name = "idListaReproduccion") BigInteger idUsuario){
 		return listaReproduccionService.eliminarListaReproduccion(idUsuario);
 	}
 }

@@ -24,7 +24,7 @@ import lombok.experimental.FieldDefaults;
 @Entity
 @Getter
 @Setter
-@Table(name = "user")
+@Table(name = "lista_reproduccion")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @AllArgsConstructor
@@ -39,11 +39,10 @@ public class ListaReproduccion  extends EntidadGeneral{
 	@Column(name = "descripcion")
 	String descripcion;
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "listaReproduccion")
-	List<Cancion> canciones;
-	
-
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(optional = true, fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_usuario")
 	Usuario usuario;
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "listaReproduccion")
+	List<ListaReproduccionXCanciones> listaReproduccionXCanciones;
 }

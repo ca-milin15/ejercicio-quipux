@@ -28,7 +28,14 @@ CREATE TABLE `cancion` (
   `artista` varchar(150) NOT NULL,
   `album` varchar(150) NOT NULL,
   `anno` int(4) NOT NULL,
-  `lista_reproduccion_id` bigint NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `lista_reproduccion_x_cancion` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id_lista_reproduccion` bigint NOT NULL,
+  `id_cancion` bigint NOT NULL,
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`lista_reproduccion_id`) REFERENCES lista_reproduccion (`id`)
+  FOREIGN KEY (`id_lista_reproduccion`) REFERENCES lista_reproduccion (`id`),
+  FOREIGN KEY (`id_cancion`) REFERENCES cancion (`id`)
 );

@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import com.quipux.prueba.demo.ejercicio3.listareproducccion.model.EntidadGeneral;
 import com.quipux.prueba.demo.ejercicio3.listareproducccion.model.ListaReproduccion;
@@ -19,6 +20,7 @@ import lombok.experimental.FieldDefaults;
 @Entity
 @Getter
 @Setter
+@Table(name = "usuario")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 public class Usuario  extends EntidadGeneral{
