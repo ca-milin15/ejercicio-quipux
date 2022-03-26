@@ -1,0 +1,34 @@
+
+create database quipux;
+
+CREATE TABLE `usuario` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `usuario` varchar(50) NOT NULL,
+  `contrasena` varchar(150) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `apellido` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `usuario_idx` (`usuario`)
+);
+
+
+CREATE TABLE `lista_reproduccion` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(50) NOT NULL,
+  `descripcion` varchar(150) NOT NULL,
+  `id_usuario` bigint NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`id_usuario`) REFERENCES usuario (`id`),
+  UNIQUE KEY `nombre_idx` (`nombre`)
+);
+
+CREATE TABLE `cancion` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(150) NOT NULL,
+  `artista` varchar(150) NOT NULL,
+  `album` varchar(150) NOT NULL,
+  `anno` int(4) NOT NULL,
+  `lista_reproduccion_id` bigint NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`lista_reproduccion_id`) REFERENCES lista_reproduccion (`id`)
+);
